@@ -3,12 +3,14 @@ import { onBeforeUnmount, onMounted, ref, useId } from 'vue'
 import { RouterLink } from 'vue-router'
 import BaseContainer from '@/components/ui/BaseContainer.vue'
 import BaseSearchInput from '@/components/ui/BaseSearchInput.vue'
+import AuthModal from '@/components/auth/AuthModal.vue'
 import logoMain from '@/assets/logo/logo-main.svg'
 import profileIcon from '@/assets/icons/profile.svg'
 import mosaicIcon from '@/assets/icons/mosaic.svg'
-import closeIcon from '@/assets/icons/close.svg'
+import closeIcon from '@/assets/icons/close-white.svg'
 
 const isCatalogOpen = ref(false)
+const isAuthOpen = ref(false)
 const catalogId = useId()
 const catalogItems = [
   { id: 'all', name: 'Все', icon: '📦' },
@@ -51,7 +53,7 @@ onBeforeUnmount(() => {
         <RouterLink :to="{ name: 'home' }" class="text-6xl font-semibold text-accent">
           <img :src="logoMain" alt="Главная" class="" />
         </RouterLink>
-        <button>
+        <button type="button" aria-haspopup="dialog" @click="isAuthOpen = true">
           <img :src="profileIcon" alt="Мой профиль" class="size-7" />
         </button>
       </nav>
@@ -104,4 +106,5 @@ onBeforeUnmount(() => {
       </div>
     </BaseContainer>
   </header>
+  <AuthModal v-if="isAuthOpen" @close="isAuthOpen = false" />
 </template>

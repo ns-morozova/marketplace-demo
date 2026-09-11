@@ -27,8 +27,7 @@ const formattedRating = computed(() => Math.min(5, Math.max(0, props.rating)).to
             
             <button
                 type="button"
-                class="absolute right-4 top-4 flex size-7 items-center justify-center"
-                :aria-label="`Избранное: ${name}`"
+                class="absolute right-2.5 top-2.5 flex size-7 items-center justify-center"
                 :aria-pressed="isSaved"
                 @click="emit('toggleSaved')"
             >

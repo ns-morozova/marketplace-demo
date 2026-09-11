@@ -15,7 +15,7 @@ withDefaults(
   <button
     :type="type"
     :disabled="disabled"
-    class="inline-flex min-h-11 items-center justify-center rounded-lg bg-accent px-5 py-2.5 font-medium text-main transition-colors hover:bg-accent/80 disabled:cursor-not-allowed disabled:opacity-50"
+    class="bg-accent text-white rounded-2xl font-medium text-sm flex justify-center gap-2 px-3 py-2.5 disabled:opacity-50"
   >
     <slot />
   </button>

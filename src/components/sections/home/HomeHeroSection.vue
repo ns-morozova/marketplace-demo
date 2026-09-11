@@ -20,14 +20,14 @@ function toggleSaved(id: Product['id']) {
 </script>
 
 <template>
-  <section aria-labelledby="home-title" class="py-6">
+  <section aria-labelledby="home-title" class="pt-40 pb-6">
     <BaseContainer>
       <h1 id="home-title" class="sr-only">Каталог товаров</h1>
       <div class="flex items-center gap-3">
         <button
           type="button"
-          class="text-2xl"
-          :class="{ 'font-bold': activeFilter === 'all' }"
+          class="font-bold text-2xl"
+          :class="{ 'text-gray-400/90': activeFilter === 'saved' }"
           :aria-pressed="activeFilter === 'all'"
           @click="activeFilter = 'all'"
         >
@@ -35,8 +35,8 @@ function toggleSaved(id: Product['id']) {
         </button>
         <button
           type="button"
-          class="text-2xl"
-          :class="{ 'font-bold': activeFilter === 'saved' }"
+          class="font-bold text-2xl"
+          :class="{ 'text-gray-400/90': activeFilter === 'all' }"
           :aria-pressed="activeFilter === 'saved'"
           @click="activeFilter = 'saved'"
         >

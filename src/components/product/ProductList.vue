@@ -9,7 +9,7 @@ const emit = defineEmits<{ toggleSaved: [id: Product['id']] }>()
 <template>
   <ul
     v-if="products.length"
-    class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4"
+    class="grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-3 lg:grid-cols-4"
   >
     <li v-for="product in products" :key="product.id">
       <ProductCard
